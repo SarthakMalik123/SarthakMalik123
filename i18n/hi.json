@@ -1,0 +1,61 @@
+{
+  "app.name": "SurakshitPath – भविष्यवाणी · रोकथाम · समृद्धि",
+  "login.title": "सुरक्षितपथ में आपका स्वागत है",
+  "login.email": "ईमेल",
+  "login.password": "पासवर्ड",
+  "login.button": "लॉग इन",
+  "login.signup": "साइन अप",
+  "login.demo": "डेमो मोड",
+  "login.or": "या",
+  "login.error": "अमान्य प्रमाण पत्र",
+  "lang.select": "भाषा",
+
+  "sidebar.title": "कंट्रोल सेंटर",
+  "sidebar.upload": "CSV अपलोड करें",
+  "sidebar.filters": "फ़िल्टर",
+  "sidebar.state": "राज्य",
+  "sidebar.product": "उत्पाद",
+  "sidebar.risk": "जोखिम स्तर",
+  "sidebar.toggles": "उन्नत",
+  "sidebar.toggle.weather": "मौसम डेटा दिखाएं",
+  "sidebar.toggle.riskzones": "जोखिम क्षेत्र दिखाएं",
+  "sidebar.about": "के बारे में",
+  "sidebar.logout": "लॉग आउट",
+
+  "tabs.overview": "ओवरव्यू 📊",
+  "tabs.prediction": "विलंब भविष्यवाणी (एआई) 🧠",
+  "tabs.routing": "रूट मैपिंग 🗺️",
+  "tabs.reports": "रिपोर्ट्स और एक्सपोर्ट 📑",
+
+  "kpi.total_vendors": "कुल विक्रेता",
+  "kpi.avg_risk": "औसत जोखिम स्कोर",
+  "kpi.high_risk": "उच्च जोखिम विक्रेता",
+  "kpi.avg_delay": "औसत विलंब %",
+
+  "charts.risk_distribution": "जोखिम स्तर वितरण",
+  "charts.products_by_risk": "जोखिम के अनुसार उत्पाद",
+
+  "table.vendors": "विक्रेता",
+
+  "prediction.controls": "पूर्वानुमान नियंत्रण",
+  "prediction.distance": "दूरी (किमी)",
+  "prediction.past_delays": "पिछले विलंब (गिनती)",
+  "prediction.weather": "मौसम स्कोर",
+  "prediction.results": "पूर्वानुमान परिणाम",
+  "prediction.top_risky": "शीर्ष जोखिम वाले विक्रेता",
+
+  "routing.source": "स्रोत",
+  "routing.destination": "गंतव्य",
+  "routing.plot": "रूट बनाएं",
+
+  "reports.summary": "सारांश",
+  "reports.export_csv": "CSV एक्सपोर्ट",
+  "reports.export_pdf": "PDF एक्सपोर्ट",
+  "reports.summary_text": "यह रिपोर्ट विक्रेता जोखिम, अनुमानित विलंब और मार्ग सलाह का सार प्रस्तुत करती है।",
+
+  "risk.low": "कम",
+  "risk.medium": "मध्यम",
+  "risk.high": "उच्च",
+
+  "about.text": "सुरक्षितपथ एआई आधारित अंतर्दृष्टि के साथ आपूर्ति श्रृंखला में देरी का अनुमान लगाकर जोखिमों को कम करने में मदद करता है।"
+}

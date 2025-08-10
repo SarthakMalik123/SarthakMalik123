@@ -2,7 +2,7 @@ from __future__ import annotations
 import folium
 from folium.plugins import BeautifyIcon
 import pandas as pd
-from typing import Tuple
+from typing import Tuple, List, Dict
 
 RISK_COLOR = {
     "Low": "blue",

@@ -11,6 +11,8 @@ from src import ui_components as ui
 from src import maps as maps_utils
 from src import reports as reports_utils
 from src.auth import verify_password, find_user, register_user
+from src.config import get_ors_api_key, get_openweather_api_key
+from src.services import get_route_openrouteservice, get_weather_openweather
 
 st.set_page_config(page_title="SurakshitPath", page_icon="🛡️", layout="wide")
 
@@ -209,7 +211,7 @@ def tab_prediction(df: pd.DataFrame, show_weather: bool):
     st.altair_chart(chart, use_container_width=True)
 
 
-def tab_routing(df: pd.DataFrame, show_zones: bool):
+def tab_routing(df: pd.DataFrame, show_zones: bool, show_weather: bool):
     col1, col2 = st.columns(2)
     with col1:
         src_lat = st.number_input(t("routing.source")+" Lat", value=float(df["lat"].iloc[0]))
@@ -219,10 +221,43 @@ def tab_routing(df: pd.DataFrame, show_zones: bool):
         dst_lon = st.number_input(t("routing.destination")+" Lon", value=float(df["lon"].iloc[-1]))
 
     if st.button(t("routing.plot")):
+        route_coords = None
+        distance_km = None
+        duration_min = None
+        ors_key = get_ors_api_key()
+        if ors_key:
+            try:
+                rd = get_route_openrouteservice((src_lat, src_lon), (dst_lat, dst_lon), ors_key)
+                route_coords = rd["coords"]
+                distance_km = rd["distance_km"]
+                duration_min = rd["duration_min"]
+            except Exception as e:
+                st.warning(f"Routing API error: {e}. Falling back to straight line.")
+        else:
+            st.info("Set ORS_API_KEY in .env to enable real routing.")
+
+        weather_data = {}
+        if show_weather:
+            owm_key = get_openweather_api_key()
+            if owm_key:
+                try:
+                    weather_data["source"] = get_weather_openweather(src_lat, src_lon, owm_key)
+                    weather_data["dest"] = get_weather_openweather(dst_lat, dst_lon, owm_key)
+                except Exception as e:
+                    st.warning(f"Weather API error: {e}")
+            else:
+                st.info("Set OPENWEATHER_API_KEY in .env to show weather.")
+
         def popup(row):
             risk = str(row.get("risk_level", "Medium"))
             return f"<b>{row.get('vendor_name')}</b><br/>Risk: {risk}<br/>Delay: {row.get('avg_delay_pct',0):.1f}%"
-        fmap = maps_utils.create_map(df, popup, show_zones, (src_lat, src_lon), (dst_lat, dst_lon))
+        fmap = maps_utils.create_map(df, popup, show_zones, (src_lat, src_lon), (dst_lat, dst_lon), route_coords=route_coords, weather=weather_data if weather_data else None)
+
+        # Show route metrics if available
+        if distance_km is not None and duration_min is not None:
+            m1, m2 = st.columns(2)
+            m1.metric("Distance (km)", f"{distance_km:.1f}")
+            m2.metric("ETA (min)", f"{duration_min:.0f}")
         st_folium(fmap, width=1200, height=600)
 
 
@@ -263,6 +298,6 @@ else:
     with tabs[1]:
         tab_prediction(df, show_weather)
     with tabs[2]:
-        tab_routing(df, show_zones)
+        tab_routing(df, show_zones, show_weather)
     with tabs[3]:
         tab_reports(df)

@@ -1,0 +1,11 @@
+vendor_id,vendor_name,state,product,risk_level,avg_delay_pct,lat,lon,distance_km,past_delays,weather_score
+1,Alpha Logistics,Maharashtra,Wheat,High,22.5,19.0760,72.8777,350,5,70
+2,Beta Supplies,Gujarat,Rice,Medium,12.1,23.0225,72.5714,420,3,50
+3,Gamma Traders,Karnataka,Pulses,Low,5.3,12.9716,77.5946,180,1,30
+4,Delta Freight,Delhi,Electronics,High,28.7,28.7041,77.1025,900,8,80
+5,Epsilon Foods,West Bengal,Tea,Medium,14.0,22.5726,88.3639,600,4,55
+6,Zeta Pharma,Tamil Nadu,Medicines,Low,6.2,13.0827,80.2707,200,1,25
+7,Eta Agro,Telangana,Seeds,Medium,11.8,17.3850,78.4867,320,2,45
+8,Theta Metals,Rajasthan,Steel,High,24.3,26.9124,75.7873,750,6,75
+9,Iota Textiles,Punjab,Cotton,Low,4.7,31.1471,75.3412,500,1,20
+10,Kappa Logistics,Uttar Pradesh,Fertilizers,Medium,13.5,26.8467,80.9462,650,3,60

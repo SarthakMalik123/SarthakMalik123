@@ -1,0 +1,61 @@
+{
+  "app.name": "SurakshitPath – Predict · Prevent · Prosper",
+  "login.title": "Welcome to SurakshitPath",
+  "login.email": "Email",
+  "login.password": "Password",
+  "login.button": "Log in",
+  "login.signup": "Sign up",
+  "login.demo": "Demo Mode",
+  "login.or": "or",
+  "login.error": "Invalid credentials",
+  "lang.select": "Language",
+
+  "sidebar.title": "Control Center",
+  "sidebar.upload": "Upload CSV",
+  "sidebar.filters": "Filters",
+  "sidebar.state": "State",
+  "sidebar.product": "Product",
+  "sidebar.risk": "Risk Level",
+  "sidebar.toggles": "Advanced",
+  "sidebar.toggle.weather": "Show Weather Data",
+  "sidebar.toggle.riskzones": "Show Risk Zones",
+  "sidebar.about": "About",
+  "sidebar.logout": "Log out",
+
+  "tabs.overview": "Overview 📊",
+  "tabs.prediction": "Delay Prediction (AI) 🧠",
+  "tabs.routing": "Route Mapping 🗺️",
+  "tabs.reports": "Reports & Export 📑",
+
+  "kpi.total_vendors": "Total Vendors",
+  "kpi.avg_risk": "Average Risk Score",
+  "kpi.high_risk": "High Risk Vendors",
+  "kpi.avg_delay": "Avg Delay %",
+
+  "charts.risk_distribution": "Risk Level Distribution",
+  "charts.products_by_risk": "Products by Risk",
+
+  "table.vendors": "Vendors",
+
+  "prediction.controls": "Prediction Controls",
+  "prediction.distance": "Distance (km)",
+  "prediction.past_delays": "Past Delays (count)",
+  "prediction.weather": "Weather Score",
+  "prediction.results": "Prediction Results",
+  "prediction.top_risky": "Top Risky Vendors",
+
+  "routing.source": "Source",
+  "routing.destination": "Destination",
+  "routing.plot": "Plot Route",
+
+  "reports.summary": "Summary",
+  "reports.export_csv": "Export CSV",
+  "reports.export_pdf": "Export PDF",
+  "reports.summary_text": "This report summarizes vendor risks, predicted delays, and route advisories.",
+
+  "risk.low": "Low",
+  "risk.medium": "Medium",
+  "risk.high": "High",
+
+  "about.text": "SurakshitPath helps supply chains anticipate delays and mitigate risks using AI-driven insights."
+}
